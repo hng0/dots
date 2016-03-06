@@ -1,0 +1,31 @@
+[user]
+	name = Hoang Ngo
+	email = hoangngo.dev@gmail.com
+[github]
+	user = hoangmngo
+[push]
+	default = current
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = auto
+[diff]
+	algorithm = patience
+[alias]
+	st = status --short
+	cl = clone
+	co = checkout
+	cm = commit
+	cma = commit -a
+	br = branch -vv
+	rc = rebase --continue
+	lg = log --graph
+	bb = bisect bad
+	bg = bisect good
+	sm = submodule
+	smi = submodule init
+	smu = submodule update
+	smui = submodule update --init
+	amend = git commit --amend
+	graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
