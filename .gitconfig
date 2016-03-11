@@ -27,5 +27,5 @@
 	smi = submodule init
 	smu = submodule update
 	smui = submodule update --init
-	amend = git commit --amend
+	amend = commit --amend
 	graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
