@@ -4,7 +4,7 @@
 [github]
 	user = hoangmngo
 [push]
-	default = current
+	default = simple
 [color]
 	diff = auto
 	status = auto
@@ -18,8 +18,15 @@
 	co = checkout
 	cm = commit
 	cma = commit -a
+	cmm = commit -m
 	br = branch -vv
+	df = diff
+	dfs = diff --staged
 	rc = rebase --continue
+	ra = rebase --abort
+	cp = cherry-pick
+	cpc = cherry-pick --continue
+	cpa = cheery-pick --abort
 	lg = log --graph
 	bb = bisect bad
 	bg = bisect good
@@ -28,4 +35,6 @@
 	smu = submodule update
 	smui = submodule update --init
 	amend = commit --amend
-	graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	info = config --list
+	g = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	w = whatchanged
