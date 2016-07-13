@@ -13,6 +13,7 @@
 [diff]
 	algorithm = patience
 [alias]
+	up = pull -v --rebase
 	st = status --short
 	cl = clone
 	co = checkout
@@ -22,6 +23,8 @@
 	br = branch -vv
 	df = diff
 	dfs = diff --staged
+	rb = rebase
+	ri = rebase -i
 	rc = rebase --continue
 	ra = rebase --abort
 	cp = cherry-pick
