@@ -5,6 +5,25 @@ set encoding=utf-8
 " Pathogen
 execute pathogen#infect()
 
+" indentLine configuration
+""""""""""""""""""""""""""
+let g:indentLine_color_term = 239
+let g:indentLine_char = '|'
+
+" ctrlp.vim configuration
+"""""""""""""""""""""""""
+" Use <C-t> to open ctrlp
+let g:ctrlp_map = '<C-t>'
+" Ignore these directories
+set wildignore+=*/build/**
+" Disable caching
+let g:ctrlp_use_caching=0
+
+" NERDTree configuration
+""""""""""""""""""""""""
+" Open tree view with <C-\>
+nmap <C-\> :NERDTreeToggle<CR>
+
 " Vim appearance
 """"""""""""""""
 colorscheme badwolf
