@@ -2,16 +2,16 @@
 set nocompatible
 set encoding=utf-8
 
+" Plugins
+"""""""""
 " Pathogen
 execute pathogen#infect()
 
 " indentLine configuration
-""""""""""""""""""""""""""
 let g:indentLine_color_term = 239
 let g:indentLine_char = '|'
 
 " ctrlp.vim configuration
-"""""""""""""""""""""""""
 " Use <C-t> to open ctrlp
 let g:ctrlp_map = '<C-t>'
 " Ignore these directories
@@ -20,13 +20,11 @@ set wildignore+=*/build/**
 let g:ctrlp_use_caching=0
 
 " NERDTree configuration
-""""""""""""""""""""""""
-" Open tree view with <C-\>
 nmap <C-\> :NERDTreeToggle<CR>
 
 " Vim appearance
 """"""""""""""""
-colorscheme badwolf
+set background=dark
 " Set console title to currently open file name
 set title
 " Show ruler
@@ -39,8 +37,13 @@ set showcmd
 set cursorline
 " Highlight cursor's column
 set cursorcolumn
+highlight CursorColumn guibg=#262626
 " Highlight matching bracket on insertion mode
 set showmatch
+" Highlight 81st column
+set textwidth=80
+set colorcolumn=+1
+highlight ColorColumn ctermbg=235 guibg=red
 
 " Vim functionalities
 """""""""""""""""""""
@@ -52,6 +55,15 @@ set history=50
 set hlsearch
 " Search as you type
 set incsearch
+" Set backspace key
+set backspace=indent,eol,start
+" Switch buffer without saving
+set hidden
+" Insert leading comment characters when pressing <enter> in insert mode
+set formatoptions+=r
+" Set swap file directories
+set backupdir=~/.vim/backup,.,~
+set directory=~/.vim/backup,.,~
 
 " Code
 """"""
@@ -62,12 +74,21 @@ set nowrap
 " Force foldenable. Better safe than sorry.
 set foldenable
 set foldmethod=indent foldlevel=99 foldminlines=3
-set tabstop=4
 " Num spaces per tab
+set tabstop=4
+" Num spaces used in <tab> and <BS>
 set softtabstop=4
 " Tab to spaces
-" set expandtab
+set expandtab
+" Auto-indent
 set noautoindent smartindent
+" number of space characters inserted for indentation
+set shiftwidth=4
+" Highlight trailing spaces
+highlight RedundantSpaces ctermbg=red
+match RedundantSpaces /\s\+$\|[^\t]\zs\t\+\|\t\zs \+/
+" Highlight TODO
+highlight Todo ctermfg=darkgrey ctermbg=yellow
 
 " Key mapping
 """""""""""""
@@ -88,3 +109,6 @@ imap <C-h> <C-o><C-w>h
 imap <C-j> <C-o><C-w>j
 imap <C-k> <C-o><C-w>k
 imap <C-l> <C-o><C-w>l
+" Remove trailing spaces
+cnoreabbrev <silent> clean %s/[\r \t]\+$//
+
