@@ -41,3 +41,9 @@
 	info = config --list
 	g = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	w = whatchanged
+	st = status --short
+	up = pull -v --rebase
+	p = push
+	save = "!f() { git add . && git cmm "INCOMPLETE_WORK"; }; f"
+	work = reset HEAD~1
+	aa = add .
